@@ -4,7 +4,8 @@ function add(numlist) {
         return 0;
     }
 
-    const arr = numlist.split(',').map(x => +x);
+    const arr = numlist.split(/,|\n/).map(x => +x);
+    console.log(arr);
     const result = arr.reduce((a, b) => a + (+b), 0);
     return result;
 }
