@@ -4,7 +4,14 @@ function add(numlist) {
         return 0;
     }
 
-    const arr = numlist.split(/,|\n/).map(x => +x);
+    if(numlist.trim() == '')
+        return 0;
+
+    if(numlist.indexOf('\n') === -1)
+        throw Error("delimiter not found");
+
+    const [ , delimiter, str, ] = numlist.split(/\/\/(.)\n(.*)/s);
+    const arr = str.split(delimiter).map(x => +x);
     const result = arr.reduce((a, b) => a + (+b), 0);
     return result;
 }
