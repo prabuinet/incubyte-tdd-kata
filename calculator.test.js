@@ -10,3 +10,8 @@ test('should return 0 for anything other than a string', () => {
     expect(add({})).toBe(0); 
 });
 
+test('comma separated should return sum', () => {
+    expect(add("1")).toBe(1); 
+    expect(add("1,2")).toBe(3); 
+    expect(add("1,2,3,5")).toBe(11);
+});
