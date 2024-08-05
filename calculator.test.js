@@ -17,3 +17,14 @@ test('comma separated should return sum', () => {
     expect(add("1 , 2 , 3 , , , ,   5 ")).toBe(11);
     expect(add(",,,")).toBe(0);
 });
+
+
+test('comma or newline separated should return sum', () => {
+    expect(add("1")).toBe(1); 
+    expect(add("1,2")).toBe(3); 
+    expect(add("1\n2")).toBe(3); 
+    expect(add("1,2\n3\n5")).toBe(11);
+    expect(add("1 , 2 \n 3 , , , ,   5 ")).toBe(11);
+    expect(add("\n\n\n\n,,")).toBe(0);
+});
+
