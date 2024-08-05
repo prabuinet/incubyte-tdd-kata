@@ -28,3 +28,10 @@ test('comma or newline separated should return sum', () => {
     expect(add("\n\n\n\n,,")).toBe(0);
 });
 
+test('comma or newline separated should return sum', () => {
+    expect(add("//;\n1;2")).toBe(3);
+    expect(add("//,\n1;2")).toBe(3);
+    expect(add("//\n\n1\n2\n3")).toBe(6);
+    expect(add("//;\n1")).toBe(1);
+    expect(add("//,\n\n\n\n,,")).toBe(0);
+});
