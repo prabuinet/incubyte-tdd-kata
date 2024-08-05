@@ -35,3 +35,8 @@ test('comma or newline separated should return sum', () => {
     expect(add("//;\n1")).toBe(1);
     expect(add("//,\n\n\n\n,,")).toBe(0);
 });
+
+test('throw error if no delimiter given', () => {
+    expect(() => add('//1,,2,2,3')).toThrow('delimiter not found');
+});
+
