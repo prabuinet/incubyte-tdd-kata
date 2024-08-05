@@ -14,4 +14,6 @@ test('comma separated should return sum', () => {
     expect(add("1")).toBe(1); 
     expect(add("1,2")).toBe(3); 
     expect(add("1,2,3,5")).toBe(11);
+    expect(add("1 , 2 , 3 , , , ,   5 ")).toBe(11);
+    expect(add(",,,")).toBe(0);
 });
