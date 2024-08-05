@@ -5,7 +5,6 @@ function add(numlist) {
     }
 
     const arr = numlist.split(/,|\n/).map(x => +x);
-    console.log(arr);
     const result = arr.reduce((a, b) => a + (+b), 0);
     return result;
 }
